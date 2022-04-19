@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget App - JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="budget-container">
+        <div class="app-title">
+            <div class="kuripot-title" ><img src="icon/kuripoticon.png" alt=""></div>
+        </div>
+        <div class="budget-header">
+            <div class="balance">
+                <div class="title">
+                    Balance
+                </div>
+                <div class="value">
+                    <small>₱</small>0
+                </div>
+            </div>
+            <div class="account">
+                <div class="income">
+                    <div class="title">
+                        Income
+                    </div>
+                    <div class="income-total">
+                        <small>₱</small>0
+                    </div>
+                </div>
+                <div class="chart"></div>
+                <div class="outcome">
+                    <div class="title">
+                        Expense
+                    </div>
+                    <div class="outcome-total">
+                        <small>₱</small>0
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="budget-dashboard">
+            <div class="dash-title">Dashboard</div>
+            <div class="toggle">
+                <div class="tab1">Expenses</div>
+                <div class="tab2">Income</div>
+                <div class="tab3 active">All</div>
+            </div>
+
+            <!-- INCOME TAB -->
+            <div class="hide" id="income">
+                <ul class="list"></ul>
+
+                <!-- BUTTON FOR INCOME TAB -->
+                <img id="add-button-income" class="button" src="icon/plus2.png" alt="">
+                <div id="bg-modal-income" class="bg-modal-income">
+                    <div class="modal-contents">
+                            <div id="income-text">Add Income</div>
+                            <input type="text" id="income-title-input" name="title" placeholder="Title">
+                            <input type="number" id="income-amount-input" name="amount" placeholder="₱0">
+                            <!-- <input type="text" id="income-category-input" name="category" placeholder="Category"> -->
+                            <select id="income-category-input" name="category" placeholder="Category">
+                                <option value="" disabled selected>Income Category</option>
+                                <option value="Allowance">Allowance</option>
+                                <option value="Business">Business</option>
+                                <option value="Capital Gains">Capital Gains</option>
+                                <option value="Gift">Gift</option>
+                                <option value="Government Aid">Government Aid</option>
+                                <option value="Interest">Interest</option>
+                                <option value="Part-time Job">Part-time Job</option>
+                                <option value="Product Selling">Product Selling</option>
+                                <option value="Renting">Renting</option>
+                                <option value="Salary (Full-time)">Salary (Full-time)</option>
+                                <option value="Self-Employment">Self-Employment</option>
+                                <option value="Stocks/Crypto">Stocks/Crypto</option>
+                                <option value="Others">Others</option>
+                            </select>
+                            <input type="date" id="income-date-input" name="date" placeholder="">
+                            <div class="add-income" id="income-add-button"><button class="button income-submit">SUBMIT</button></div>
+                            <div class="close-income" id="income-cancel"><button id="income-cancelDelete" class="button"></button></div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            
+            <!-- EXPENSE TAB -->
+            <div class="hide" id="expense">
+                <ul class="list"></ul>
+                <img id="add-button-expense" class="button" src="icon/plus2.png" alt="">
+                <div id="bg-modal-expense" class="bg-modal-expense">
+                    <div class="modal-contents">
+                            <div id="expense-text">Add Expense</div>
+                            <input type="text" id="expense-title-input" name="title" placeholder="Title">
+                            <input type="number" id="expense-amount-input" name="amount" placeholder="₱0">
+                            <!-- <input type="text" id="expense-category-input" name="category" placeholder="Category"> -->
+                            <select id="expense-category-input" name="category" placeholder="Category">
+                                <option value="" disabled selected>Expense Category</option>
+                                <option value="Clothing">Clothing</option>
+                                <option value="Debt">Debt</option>
+                                <option value="Education">Education</option>
+                                <option value="Entertainment">Entertainment</option>
+                                <option value="Food">Food</option>
+                                <option value="Groceries">Groceries</option>
+                                <option value="Household Items/Supplies">Household Items/Supplies</option>
+                                <option value="Housing">Housing</option>
+                                <option value="Insurance">Insurance</option>
+                                <option value="Medical/Healthcare">Medical/Healthcare</option>
+                                <option value="Personal">Personal</option>
+                                <option value="Retirement">Retirement</option>
+                                <option value="Savings">Savings</option>
+                                <option value="Transportation">Transportation</option>
+                                <option value="Utilities">Utilities</option>
+                                <option value="Others">Others</option>
+                            </select>
+                            <input type="date" id="expense-date-input" name="date" placeholder="">
+                            <div class="add-expense" id="expense-add-button"><button class="button expense-submit">SUBMIT</button></div>
+                            <div class="close-expense" id="expense-cancel"><button id="expense-cancelDelete" class="button"></button></div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- TRANSACTION HISTORY TAB -->
+            <div id="all">
+                <ul class="list"></ul>
+                <p style="text-align: center; font-family: 'Gilroy Bold';">TRANSACTION HISTORY</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="chart.js"></script>
+    <script src="budget.js"></script>
+    
+</body>
+</html>
